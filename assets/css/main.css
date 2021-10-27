@@ -174,7 +174,7 @@ body {
 
 	body {
 		background-color: #2e3141;
-		background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url("../../images/bg.jpg");
+		background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.55)), url("../../images/mountain.jpg");
 		/* filter: blur(8px);
 		-webkit-filter: blur(8px); */
 		background-size: auto,
