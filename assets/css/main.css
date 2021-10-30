@@ -26,6 +26,7 @@ footer, header, hgroup, menu, nav, section {
 
 body {
 	line-height: 1;
+	overflow-x: hidden !important;
 }
 
 ol, ul {
@@ -66,64 +67,91 @@ input, select, textarea {
 	-ms-appearance: none;
 	appearance: none;
 }
-/* NavBar */
 
+/* Fade In on Scroll for "What I Do" items */
+.fade-in {
+  opacity: 0 !important;
+  transition: opacity 250ms ease-in !important;
+}
+
+.fade-in.appear {
+  opacity: 1 !important;
+}
+
+.fade-left {
+  -webkit-transform: translateX(-50%) !important;
+  transform: translateX(-50%) !important;
+}
+
+.fade-right {
+  -webkit-transform: translateX(50%) !important;
+  transform: translateX(50%) !important;
+}
+
+.fade-left,
+.fade-right {
+  transition: opacity 250ms ease-in , -webkit-transform 400ms ease-in !important;
+  transition: opacity 250ms ease-in, transform 400ms ease-in !important;
+  transition: opacity 250ms ease-in, transform 400ms ease-in,
+    -webkit-transform 400ms ease-in !important;
+  opacity: 0 !important;
+}
+
+.fade-left.appear,
+.fade-right.appear {
+  -webkit-transform: translateX(0) !important;
+  transform: translateX(0) !important;
+  opacity: 1 !important;
+}
+
+
+/* Typewriter Animation */
+
+
+/* NavBar Layout and Animation */
 .nav {
 	display: inline-block;
 }
-
 #nav_id {
   display: inline-block;
   align-items: center;
   list-style: none;
 }
-
 .nav_link {
   display: inline-block;
   text-decoration: none;
   /* letter-spacing: 0.2rem; */
-  /* font-size: 0.9rem; */
+  font-size: 1em;
 	transition: all .25s;
-
 }
-
 .nav_link:hover {
   display: inline-block;
   text-decoration: none;
   /* letter-spacing: 0.3rem;
   font-size: 1.1rem; */
+	border-bottom: 1px solid white;
 
 	border-color: white;
   color: white;
   transform: translateY(-0.25em);
   cursor: pointer;
 }
-
-/* button {
-  background: none;
-  border: solid 3px;
-  color: #ffa260;
-  padding: 1em 2em;
-  font-size: 1em;
+/* Navbar Bottom Border Animation */
+/* #nav_id .nav_link:after {
+	transition: all ease-in-out .25s;
+	background: none repeat scroll 0 0 #ffffff;
+	content: "";
+	display: block;
+	height: 1.5px;
+	width: 0;
 }
-
-button:hover{
-  border-color:#f1ff5c;
-  color: white;
-  box-shadow: 0 0.5em 0.5em -0.5em #f1ff5c;
-  transform: translateY(-0.25em);
-  cursor: pointer;
-}
-
-button:focus {
-  outline: none;
+#nav_id .nav_link:hover:after {
+	width: 100%;
 } */
 
-/* Scroll-Bar */
 
-/* body {
-	overflow: overlay;
-} */
+
+/* Designing Scroll-Bar */
 ::-webkit-scrollbar {
 	width: .5rem;
 }
@@ -135,13 +163,7 @@ button:focus {
 	visibility: hidden;
 }
 
-/* body {
-  width: 160%;
-  height: 160%;
-  transform-origin: top left;
-  transform: scale(40%);
-} */
-
+/* Zooming out on page */
 body {
 	zoom: .85;
 }
@@ -174,15 +196,12 @@ body {
 
 	body {
 		background-color: #2e3141;
-		background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.55)), url("../../images/mountain.jpg");
+		background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url('../../images/bg.jpg');
 		/* filter: blur(8px);
 		-webkit-filter: blur(8px); */
-		background-size: auto,
- cover;
-		background-attachment: fixed,
- fixed;
-		background-position: center,
- center;
+		background-size: auto, cover;
+		background-attachment: fixed, fixed;
+		background-position: center, center;
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -3465,7 +3484,9 @@ body {
 /* Banner */
 
 	#banner {
-		padding: 10em 0 4.75em 0 ;
+		/* padding: 10em 0 4.75em 0 ; */
+		/* padding: 19.25em 0 13.20em 0 */
+		padding: 10em 0 4.75em 0;
 	}
 
 		#banner .inner {
@@ -3554,10 +3575,8 @@ body {
 				padding: 7em 0 8.25em 0 ;
 				background-color: #2e3141;
 				background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url("../../images/bg.jpg");
-				background-size: auto,
- cover;
-				background-position: center,
- center;
+				background-size: auto, cover;
+				background-position: center, center;
 				margin-bottom: -6.5em;
 			}
 
