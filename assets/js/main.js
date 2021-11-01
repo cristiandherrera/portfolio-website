@@ -140,76 +140,54 @@
 
 
 
-// // Page navigation
-
-const btnScrollTo = document.querySelector(".btn--scroll-to");
-const section1 = document.querySelector("#section--1");
-
-// btnScrollTo.addEventListener("click", function (e) {
-//   const s1coords = section1.getBoundingClientRect();
-//   console.log(s1coords);
-
-//   console.log(e.target.getBoundingClientRect());
-
-//   console.log("Current scroll (X/Y)", window.pageXOffset, pageYOffset);
-
-//   console.log(
-//     "height/width viewport",
-//     document.documentElement.clientHeight,
-//     document.documentElement.clientWidth
-//   );
-
-//   // Scrolling
-//   section1.scrollIntoView({ behavior: "auto" });
-//   // window.scrollTo({
-//   //   left: s1coords.left + window.pageXOffset,
-//   //   top: s1coords.top + window.pageYOffset,
-//   //   behavior: "smooth",
-//   // });
-// });
-
-document.querySelector(".smooth-scrolling-1").addEventListener("click", function (e) {
+//* Smooth Scrolling *//
+document.querySelector(".smooth-scrolling-nav").addEventListener("click", function (e) {
   e.preventDefault();
 
-  // Matching Strategy
   if (e.target.classList.contains("scrolling"));
   const id = e.target.getAttribute("href");
-  console.log(this);
-  console.log(e.target);
+
   document.querySelector(id).scrollIntoView({ behavior: "smooth" });
 });
 
-document.querySelector(".smooth-scrolling-2").addEventListener("click", function (e) {
+document.querySelector(".smooth-scrolling-menu").addEventListener("click", function (e) {
   e.preventDefault();
 
-  // Matching Strategy
   if (e.target.classList.contains("scrolling"));
   const id = e.target.getAttribute("href");
-  console.log(this);
-  console.log(e.target);
+	
   document.querySelector(id).scrollIntoView({ behavior: "smooth" });
 });
 
-// document.querySelector(".links").addEventListener("click", function (e) {
-//   e.preventDefault();
+/* Animation on Scroll */
+const faders = document.querySelectorAll(".fade-in");
+const sliders = document.querySelectorAll(".slide-in");
 
-//   // Matching Strategy
-//   if (e.target.classList.contains("link"));
-//   const id = e.target.getAttribute("href");
-//   console.log(this);
-//   console.log(e.target);
-//   document.querySelector(id).scrollIntoView({ behavior: "smooth" });
-// });
+const appearOptions = {
+  threshold: 0,
+  rootMargin: "0px 0px -250px 0px"
+};
 
+const appearOnScroll = new IntersectionObserver(function(
+  entries,
+  appearOnScroll
+) {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) {
+      return;
+    } else {
+      entry.target.classList.add("appear");
+      appearOnScroll.unobserve(entry.target);
+    }
+  });
+},
+appearOptions);
 
-// document.querySelector('.resume').addEventListener('click', function(e) {
-// 	e.preventDefault();
+faders.forEach(fader => {
+  appearOnScroll.observe(fader);
+});
+sliders.forEach(slider => {
+  appearOnScroll.observe(slider);
+});
 
-// 		window.open('./pdf/Cristian_Herreras_Resume');
-// })
-
-// document.querySelector('.form').addEventListener("submit", function(e) {
-// 	e.preventDefault();
-
-// 	location.reload();
-// })
+/* Type Writer Animations */
