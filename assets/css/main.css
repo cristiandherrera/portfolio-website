@@ -68,6 +68,60 @@ input, select, textarea {
 	appearance: none;
 }
 
+/* Zooming out on page */
+body {
+	zoom: .85;
+}
+
+/* Designing Scroll-Bar */
+::-webkit-scrollbar {
+	width: .5rem;
+}
+::-webkit-scrollbar-thumb {
+	background: #ffffff;
+	border-radius: 6px;
+}
+::-webkit-scrollbar-track {
+	visibility: hidden;
+}
+
+/* NavBar Layout and Hover Animation */
+.nav {
+	display: inline-block;
+}
+#nav_id {
+  display: inline-block;
+  align-items: center;
+  list-style: none;
+}
+.nav_link {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 1em;
+	transition: all .25s;
+}
+.nav_link:hover {
+  display: inline-block;
+  text-decoration: none;
+	border-bottom: 1px solid white;
+	border-color: white;
+  color: white;
+  transform: translateY(-0.25em);
+  cursor: pointer;
+}
+/* Navbar Bottom Border Animation */
+/* #nav_id .nav_link:after {
+	transition: all ease-in-out .25s;
+	background: none repeat scroll 0 0 #ffffff;
+	content: "";
+	display: block;
+	height: 1.5px;
+	width: 0;
+}
+#nav_id .nav_link:hover:after {
+	width: 100%;
+} */
+
 /* Fade In on Scroll for "What I Do" items */
 /* .fade-in {
   opacity: 0 !important;
@@ -105,67 +159,34 @@ input, select, textarea {
 } */
 
 
-/* Typewriter Animation */
-
-
-/* NavBar Layout and Animation */
-.nav {
-	display: inline-block;
-}
-#nav_id {
-  display: inline-block;
-  align-items: center;
-  list-style: none;
-}
-.nav_link {
-  display: inline-block;
-  text-decoration: none;
-  /* letter-spacing: 0.2rem; */
-  font-size: 1em;
-	transition: all .25s;
-}
-.nav_link:hover {
-  display: inline-block;
-  text-decoration: none;
-  /* letter-spacing: 0.3rem;
-  font-size: 1.1rem; */
-	border-bottom: 1px solid white;
-
-	border-color: white;
-  color: white;
-  transform: translateY(-0.25em);
-  cursor: pointer;
-}
-/* Navbar Bottom Border Animation */
-/* #nav_id .nav_link:after {
-	transition: all ease-in-out .25s;
-	background: none repeat scroll 0 0 #ffffff;
-	content: "";
-	display: block;
-	height: 1.5px;
-	width: 0;
-}
-#nav_id .nav_link:hover:after {
-	width: 100%;
-} */
-
-
-
-/* Designing Scroll-Bar */
-::-webkit-scrollbar {
-	width: .5rem;
-}
-::-webkit-scrollbar-thumb {
-	background: #ffffff;
-	border-radius: 6px;
-}
-::-webkit-scrollbar-track {
-	visibility: hidden;
+/* Card Lift Animation */
+article {
+	transition: transform .4s;
 }
 
-/* Zooming out on page */
-body {
-	zoom: .85;
+article:hover {
+	transform: translateY(-.20em);
+}
+
+/* Card Clickable */
+.title {
+	margin-bottom: 0;
+}
+
+.img-link {
+	margin-bottom: 0 !important;
+	padding-bottom: 1.75em;
+}
+
+.card-links {
+	padding-bottom: 2em;
+	margin-bottom: 0 !important;
+}
+
+.card-p-links p {
+	padding-top: 1em;
+	padding-bottom: 2em ;
+	margin-bottom: 0 ;
 }
 
 /* Basic */
@@ -203,7 +224,7 @@ body {
 		background-attachment: fixed, fixed;
 		background-position: center, center;
 	}
-
+/* 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
 			-moz-animation: none !important;
 			-webkit-animation: none !important;
@@ -213,7 +234,7 @@ body {
 			-webkit-transition: none !important;
 			-ms-transition: none !important;
 			transition: none !important;
-		}
+		} */
 
 /* Type */
 
@@ -3114,6 +3135,7 @@ body {
 			border-radius: 5px;
 			margin: 1.5em 3em 1.5em 0;
 			width: calc(50% - 1.5em);
+			box-shadow: 0 4px 8px rgb(0, 0, 0, 0.38);
 		}
 
 			.features article:nth-child(2n) {
@@ -3620,7 +3642,7 @@ body {
 
 		}
 
-		body.is-preload #banner .logo {
+		/* body.is-preload #banner .logo {
 			-moz-transform: translateY(0.5em);
 			-webkit-transform: translateY(0.5em);
 			-ms-transform: translateY(0.5em);
@@ -3650,7 +3672,7 @@ body {
 			-webkit-filter: blur(2px);
 			-ms-filter: blur(2px);
 			filter: blur(2px);
-		}
+		} */
 
 /* Wrapper */
 
