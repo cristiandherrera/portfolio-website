@@ -112,7 +112,7 @@ body {
 }
 
 /* Fade In on Scroll for "What I Do" items */
-.fade-in {
+/* .fade-in {
   opacity: 0 !important;
   transition: opacity 250ms ease-in !important;
 }
@@ -140,7 +140,7 @@ body {
   -webkit-transform: translateX(0) !important;
   transform: translateX(0) !important;
   opacity: 1 !important;
-}
+} */
 
 
 /* Card Lift Animation */
