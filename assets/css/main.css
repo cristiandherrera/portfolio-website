@@ -98,8 +98,8 @@ body {
   display: inline-block;
   text-decoration: none;
   font-size: 1em;
-	transition: all .25s;
-	color: white
+	transition: all .3s;
+	color: white;
 }
 .nav_link:hover {
   display: inline-block;
@@ -107,9 +107,44 @@ body {
 	border-bottom: 1px solid white;
 	border-color: white;
   color: white;
-  transform: translateY(-0.25em);
+  transform: translateY(-0.14em);
   cursor: pointer;
 }
+
+
+.go-2-site {
+	/* border-color:rgb(241, 255, 92); */
+	/* color: rgb(241, 255, 92) !important; */
+	/* box-shadow: 0 2px 5px 0 rgba(0,0,0,0.15); */
+	/* transform: translateY(-0.25em);
+	cursor: pointer */
+	/* box-shadow: rgba(233, 169, 227, 0.637) 0px 30px 60px -12px inset, rgb(131, 41, 134) 0px 18px 36px -18px inset; */
+	border-radius: 1em;
+	box-shadow: #2e3141 0px -23px 25px 0px inset, #393c52 0px -36px 30px 0px inset, #4d526d 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 0px 0px, rgba(0, 0, 0, 0.09) 0px 0px 0px;
+}
+.go-2-site:hover {
+	box-shadow: #412e3b 0px -23px 25px 0px inset, #412e3b 0px -36px 30px 0px inset, #412e3b 0px -79px 40px 0px inset, #412e3b 0px 2px 1px, rgba(8, 252, 0, 0.09) 0px 4px 2px,rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+	transform: translateY(-0.2em);
+
+}
+
+.shadow {
+  -moz-box-shadow:    3px 3px 5px 6px #ccc !important;
+  -webkit-box-shadow: 3px 3px 5px 6px #ccc !important;
+  box-shadow:         3px 3px 5px 6px #ccc !important;
+}
+
+
+/* 0 0.5em 0.5em -0.5em */
+/* Projects NavBar Transparency */
+
+/* .banner {
+	background-color: transparent !important;
+} */
+
+/* .trans {
+	background-color: transparent !important;
+} */
 
 /* Fade In on Scroll for "What I Do" items */
 /* .fade-in {
@@ -142,7 +177,6 @@ body {
   opacity: 1 !important;
 } */
 
-
 /* Card Lift Animation */
 article {
 	transition: transform .4s;
@@ -151,7 +185,7 @@ article:hover {
 	transform: translateY(-.20em);
 }
 
-/* Card Clickable */
+/* Card Clickable Area Increased */
 .title {
 	margin-bottom: 0;
 }
@@ -168,6 +202,35 @@ article:hover {
 	padding-bottom: 2em ;
 	margin-bottom: 0 ;
 }
+
+/* Background Image - 4221 and 3726 are commented out */ 
+#yelpcamp {
+	background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url('../../images/yelp-nobutton.png') !important;
+}
+#forkify {
+	background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url('../../images/forkify.png') !important;
+}
+#mars-weather {
+	background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url('../../images/mars-weather-app.png') !important;
+}
+#mapty {
+	background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url('../../images/mapt-with-border.png') !important;
+}
+
+/* For putting 3 Cards into 1 row */
+#yelp-section {
+	-webkit-flex-wrap: nowrap !important;
+	flex-wrap: nowrap !important;
+}
+
+#yelp-section #yelp-article {
+	margin: 1.5em 1em 1.5em 0;
+}
+
+#yelp-section #yelp-article:nth-child(3) {
+ margin-right: 0;
+}
+
 
 /* Basic */
 
@@ -3688,8 +3751,8 @@ article:hover {
 
 		#wrapper > header {
 			padding: 9em 0 6.25em 0 ;
-			background-color: #2e3141;
-			background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url("../../images/bg.jpg");
+			/* background-color: #2e3141; */
+			/* background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url("../../images/bg.jpg"); */
 			background-size: auto,
  cover;
 			background-position: center,
@@ -4181,8 +4244,8 @@ article:hover {
 	@media screen and (max-width: 1280px) {
 
 		#footer {
-			background-color: #2e3141;
-			background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url("../../images/bg.jpg");
+			/* background-color: #2e3141; */
+			/* background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url("../../images/bg.jpg"); */
 			background-size: auto,
  cover;
 			background-position: center,

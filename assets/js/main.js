@@ -191,3 +191,26 @@ sliders.forEach(slider => {
 });
 
 /* Type Writer Animations */
+const control = document.querySelector('#control')
+const banner = document.querySelector('.banner');
+const navHeight = header.getBoundingClientRect().height;
+console.log(navHeight)
+
+
+const stickyNav = function (entries) {
+	console.log(entries)
+	const [entry] = entries;
+	console.log(entry)
+
+	if (!entry.isIntersecting) header.classList.add("banner");
+	else header.classList.remove("banner");
+};
+
+const navOptions = {
+  root: null,
+  threshold: 0,
+  rootMargin: `-${navHeight}px`,
+};
+
+const headerObserver = new IntersectionObserver(stickyNav, navOptions);
+headerObserver.observe(control);
