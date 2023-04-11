@@ -190,4 +190,9 @@ sliders.forEach(slider => {
   appearOnScroll.observe(slider);
 });
 
+/* Force Page Scroll on Refresh */
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+}
+
 /* Type Writer Animations */
