@@ -111,7 +111,13 @@ body {
   cursor: pointer;
 }
 
-/* Fade In on Scroll for "What I Do" items */
+
+/* Image link fix */
+.slide-in .image{
+	border-radius: 100% !important;
+}
+
+/* Fade In Animation "What I Do" items */
 @media screen and (min-width: 400px) {
 
 	.fade-in {
@@ -148,15 +154,15 @@ body {
 
 
 /* Card Lift Animation */
-article {
+/* article {
 	transition: transform .4s;
 }
 article:hover {
 	transform: translateY(-.20em);
-}
+} */
 
 /* Card Clickable */
-.title {
+/* .title {
 	margin-bottom: 0;
 }
 .img-link {
@@ -171,7 +177,132 @@ article:hover {
 	padding-top: 1em;
 	padding-bottom: 2em ;
 	margin-bottom: 0 ;
+} */
+
+/* Card Setup */
+.features article {
+	margin: 1.5em 3em 1.5em 0;
 }
+
+/* .card__title h3 {
+	font-size: 1.1em !important;
+	padding-bottom: 0 !important;
+} */
+
+.text__content {
+	padding: 0.1em 1.75em 0.1em 1.75em;
+
+}
+
+.card__content {
+	box-shadow: 0 10px 12px rgb(0, 0, 0, 0.58);
+	background-color: #353849;
+}
+
+.image, 
+.card__content {
+	border-radius: 5px !important;
+}
+
+
+/* Card flip */
+
+.card__content {
+	position: relative;
+	transition: transform 3s;
+	transform-style: preserve-3d;
+	margin-top: 1.8em;
+}
+
+.text__content {
+	transform-style: preserve-3d;
+
+}
+
+.card:hover .card__content{
+	transform: rotateY(.5turn);
+}
+
+.image {
+	transform: translateZ(25px) !important;
+
+} 
+.card__title {
+	transform: translateZ(150px) !important;
+	
+}
+.card__subtitle {
+	transform: translateZ(100px) !important;
+}
+
+.card__back {
+	transform: rotateY(.5turn);
+}
+
+.card__front,
+ .card__back {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.card__back,
+ .image,
+ .card__subtitle,
+ .card__title,
+ .text__content,
+ .part1,
+ .part2,
+ .rowified {
+	backface-visibility: hidden;
+}
+
+/* Card Back */
+.card__back {
+	display: grid;
+	grid-template-rows: 1fr 1fr; /* Two rows that fill the container equally */
+	height: auto; /* Make the container take up the full viewport height */
+	width: 100%;
+	border-radius: 5px !important;
+	transform-style: preserve-3d;
+
+}
+.rowified {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: transform 3s;
+	transform-style: preserve-3d;
+
+}
+
+.part1 {
+	background-color: lightgreen;
+	border-radius: 5px 5px 0% 0% !important;
+	transform: translateZ(25px) !important;
+
+}
+
+.part2 {
+	background-color: lightblue;
+	border-radius: 0 0 5px 5px !important;
+	transform: translateZ(25px) !important;
+
+}
+
+.part1 h2 {
+	transform: translateZ(100px) !important;
+	border: 3px solid white;
+}
+.part2 h2 {
+	transform: translateZ(100px) !important;
+	border: 3px solid white;
+}
+
+
+
 
 /* Basic */
 
@@ -3114,12 +3245,9 @@ article:hover {
 	}
 
 		.features article {
-			padding: 1.75em 1.75em 0.1em 1.75em ;
-			background-color: #353849;
 			border-radius: 5px;
-			margin: 1.5em 3em 1.5em 0;
 			width: calc(50% - 1.5em);
-			box-shadow: 0 4px 8px rgb(0, 0, 0, 0.38);
+			box-sizing: border-box;
 		}
 
 			.features article:nth-child(2n) {
@@ -3130,10 +3258,11 @@ article:hover {
 				border-radius: 5px 5px 0 0;
 				display: block;
 				margin-bottom: 1.75em;
-				margin-left: -1.75em;
+				/* margin-left: -1.75em; */
 				margin-top: -1.75em;
 				position: relative;
-				width: calc(100% + 3.5em);
+				/* width: calc(100% + 3.5em); */
+				width: 100%;
 			}
 
 				.features article .image img {

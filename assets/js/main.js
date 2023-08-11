@@ -195,4 +195,17 @@ window.onbeforeunload = function () {
   window.scrollTo(0, 0);
 }
 
+/* Card Flip Animation */
+
+const card = document.querySelector(".card");
+
+card.addEventListener("click", function () {
+	card.classList.toggle("is-flipped");
+	console.log("trigger");
+}) 
+
+	
+
 /* Type Writer Animations */
+
+
